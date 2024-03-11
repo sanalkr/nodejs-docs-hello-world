@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const crypto = require('crypto');
 const pkg = require('./package.json');
+require('dotenv').config();
 
 
 // App constants
@@ -55,7 +56,9 @@ const router = express.Router();
 
 // Hello World for index page
 app.get('/', function (req, res) {
-    return res.send("Hello World!");
+    let text = `Database name is ${process.env.DB_NAME}, 
+    Database username is ${process.env.DB_USERNAME}, Database password is ${process.env.DB_PASSWORD}`;
+    return res.send("Hello World! " + text);
 })
 
 app.get('/api', function (req, res) {
