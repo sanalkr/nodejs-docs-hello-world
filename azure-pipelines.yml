@@ -70,4 +70,4 @@ stages:
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               runtimeStack: 'NODE|18-lts'
               startUpCommand: 'npm run start'
-              appSettings: '-DB_NAME myConfigDB - DB_USERNAME myconfigusername -DB_Password myconfigtestPassword'
+              appSettings: '-DB_NAME myConfigDB -DB_USERNAME myconfigusername -DB_Password myconfigtestPassword'
