@@ -63,7 +63,6 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: '
             inputs:
               azureSubscription: 'Pay-As-You-Go (df5ca5c2-dce8-4776-bb60-661b42bb101e)'
               appType: 'webAppLinux'
@@ -71,3 +70,4 @@ stages:
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               runtimeStack: 'NODE|18-lts'
               startUpCommand: 'npm run start'
+              appSettings: '-DB_NAME myConfigDB - DB_USERNAME myconfigusername -DB_Password myconfigtestPassword'
