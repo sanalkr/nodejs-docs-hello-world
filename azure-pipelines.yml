@@ -31,10 +31,6 @@ stages:
     - script: |
         npm run build --if-present
       displayName: 'npm install, build and test'
-      env:
-        DB_NAME: 'testpipelinedb'
-        DB_USERNAME: 'testusername'
-        DB_Password: 'testPassword'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
